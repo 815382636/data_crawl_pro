@@ -37,7 +37,7 @@ class DataSpiderSpider(CrawlSpider):
                         item["data"] =json_data
                         item["url"] =response.url
 
-                        name =html.xpath("//div[contains(@class,'page-centered')]/text()")
+                        name =html.xpath("//div[contains(@class,'page-centered')]/h1/text()")
                         if len(name) != 0:
                             item["name"] =name[0]
                         yield item

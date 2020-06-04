@@ -9,8 +9,8 @@ class JsonData(Base):
 
     __tablename__ = 'jsondata'
 
-    id = Column(Integer, primary_key=True,autoincrement=True,default=1)
-    url = Column(String(50),unique=True, nullable=False)
+    id = Column(Integer, primary_key=True,autoincrement=True)
+    url = Column(String(200),unique=True, nullable=False)
     data =Column(JSON,nullable=False)
     name =Column(String(50))
     picture =Column(String(200))

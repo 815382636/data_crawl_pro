@@ -10,7 +10,6 @@ from data_crawl_pro.dbConnection.pg_connection import connection
 from data_crawl_pro.dbConnection.model import JsonData,Base
 
 class DataCrawlProPipeline(object):
-    number =1
 
     def __init__(self):
         self.session,engine =connection()
@@ -18,23 +17,17 @@ class DataCrawlProPipeline(object):
         tables = metadata.tables
         if "jsondata" not in tables:
             Base.metadata.create_all(engine)
-            
 
 
     def process_item(self, item, spider):
 
         # print(item)
-        jsonData =JsonData(id = self.number,url =item.get("url"),data =item.get("data"),name =item.get("name"),picture=item.get("picture"))
-        self.number +=1
+        jsonData =JsonData(url =item.get("url"),data =item.get("data"),name =item.get("name"),picture=item.get("picture"))
         # print(jsonData.id,jsonData.registerTime,jsonData.url)
         try:
-            print("11111111111111111")
             self.session.add(jsonData)
             self.session.commit()
-            print("2222222222222222222")
         except :
-            print("入库失败")
             self.session.rollback()
-            print("3333333333333333333333333")
 
         return item
