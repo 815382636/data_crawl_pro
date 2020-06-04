@@ -4,6 +4,7 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 from lxml import etree
 import json
+from data_crawl_pro.items import DataCrawlProItem
 
 class DataSpiderSpider(CrawlSpider):
     name = 'data_spider'
@@ -12,10 +13,10 @@ class DataSpiderSpider(CrawlSpider):
     # https: // vega.github.io / vega - lite / examples / bar_aggregate.html
     start_urls = ['https://vega.github.io/']
     rules = (
-        Rule(LinkExtractor(allow=r'hcttps://vega.github.io/.*'), callback='parse_item', follow=True),
+        Rule(LinkExtractor(allow=r'https://vega.github.io/.*'), callback='parse_item', follow=True),
     )
 
-    number =0
+    # number =0
     def parse_item(self, response):
         # item = {}
         #item['domain_id'] = response.xpath('//input[@id="sid"]/@value').get()
@@ -29,10 +30,19 @@ class DataSpiderSpider(CrawlSpider):
                 json_data = json.loads(i)
                 if '$schema' in json_data.keys():
                     if json_data['$schema'] == 'https://vega.github.io/schema/vega-lite/v4.json':
-                        print(json_data)
-                        self.number += 1
-                else:
-                    print(0)
+                        # print(json_data)
+                        # self.number += 1
+                        # 模型赋值
+                        item = DataCrawlProItem()
+                        item["data"] =json_data
+                        item["url"] =response.url
+
+                        name =html.xpath("//div[contains(@class,'page-centered')]/text()")
+                        if len(name) != 0:
+                            item["name"] =name[0]
+                        yield item
+
+                # else:
+                #     print(0)
         # print(html.xpath("//path[@class='background']/text()"))
-        print(self.number)
-        return None
+        # print(self.number)
