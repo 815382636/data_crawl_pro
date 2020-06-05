@@ -1,6 +1,4 @@
-
-
-#pg数据库连接
+# pg数据库连接
 DIALECT = 'postgresql'
 DRIVER = 'psycopg2'
 USERNAME = 'postgres'
