@@ -4,8 +4,11 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+import time
 
 from scrapy import signals
+from selenium import webdriver
+from scrapy.http.response.html import HtmlResponse
 
 
 class DataCrawlProSpiderMiddleware(object):
@@ -30,7 +33,6 @@ class DataCrawlProSpiderMiddleware(object):
     def process_spider_output(self, response, result, spider):
         # Called with the results returned from the Spider, after
         # it has processed the response.
-
         # Must return an iterable of Request, dict or Item objects.
         for i in result:
             yield i
@@ -60,6 +62,11 @@ class DataCrawlProDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
+    # 下载地址：http://chromedriver.storage.googleapis.com/index.html
+    def __init__(self):
+        # 加载测试浏览器
+        self.driver = webdriver.Chrome(executable_path="./chromedriver")
+
 
     @classmethod
     def from_crawler(cls, crawler):
@@ -80,13 +87,18 @@ class DataCrawlProDownloaderMiddleware(object):
         #   installed downloader middleware will be called
         return None
 
+    # 返回request：则scrapy会去服务器加载资源
+    # 返回response：则跳过资源下载直接交给解析方法
     def process_response(self, request, response, spider):
-        # Called with the response returned from the downloader.
-
-        # Must either;
-        # - return a Response object
-        # - return a Request object
-        # - or raise IgnoreRequest
+        # 模拟人类行为
+        self.driver.get(request.url)
+        # 防止页面加载过慢，等待1秒
+        # time.sleep(1)
+        # 目前页面已经在测试浏览器中
+        # 经过解析的源码
+        source = self.driver.page_source
+        # 创建一个response对象,把页面信息封装在response对象中
+        response = HtmlResponse(url=self.driver.current_url, body=source, request=request, encoding="utf-8")
         return response
 
     def process_exception(self, request, exception, spider):
