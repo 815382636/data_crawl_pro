@@ -92,8 +92,6 @@ class DataCrawlProDownloaderMiddleware(object):
     def process_response(self, request, response, spider):
         # 模拟人类行为
         self.driver.get(request.url)
-        # 防止页面加载过慢，等待1秒
-        # time.sleep(1)
         # 目前页面已经在测试浏览器中
         # 经过解析的源码
         source = self.driver.page_source
