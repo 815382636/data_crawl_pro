@@ -11,4 +11,5 @@ import scrapy
 # 模型类，插入数据库
 class DataCrawlProItem(scrapy.Item):
     # define the fields for your item here like:
-    url = data = name = picture = scrapy.Field()
+    # url = data = name = picture = scrapy.Field()
+    model_list = scrapy.Field()

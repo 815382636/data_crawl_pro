@@ -5,9 +5,10 @@
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 import time
-
+from browsermobproxy import Server
 from scrapy import signals
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from scrapy.http.response.html import HtmlResponse
 
 
@@ -64,9 +65,18 @@ class DataCrawlProDownloaderMiddleware(object):
     # passed objects.
     # 下载地址：http://chromedriver.storage.googleapis.com/index.html
     def __init__(self):
-        # 加载测试浏览器
-        self.driver = webdriver.Chrome(executable_path="./chromedriver")
+        server = Server("./browsermob-proxy-2.1.4/bin/browsermob-proxy")
+        server.start()
+        self.proxy = server.create_proxy()
 
+        # 加载测试浏览器
+        chrome_options = Options()
+        chrome_options.add_argument('--ignore-certificate-errors')
+        chrome_options.add_argument('--proxy-server={0}'.format(self.proxy.proxy))
+        chrome_options.add_argument('--disable-gpu')
+        chrome_driver = r'./chromedriver'
+        self.driver = webdriver.Chrome(executable_path=chrome_driver, chrome_options=chrome_options)
+        self.driver.implicitly_wait(120)
 
     @classmethod
     def from_crawler(cls, crawler):
@@ -91,9 +101,14 @@ class DataCrawlProDownloaderMiddleware(object):
     # 返回response：则跳过资源下载直接交给解析方法
     def process_response(self, request, response, spider):
         # 模拟人类行为
+        self.proxy.new_har(request.url)
         self.driver.get(request.url)
-        # 目前页面已经在测试浏览器中
-        # 经过解析的源码
+        time.sleep(60)
+        result = self.proxy.har
+        for entry in result['log']['entries']:
+            _url = entry['request']['url']
+            if _url not in spider.urls:
+                spider.urls.append(_url)
         source = self.driver.page_source
         # 创建一个response对象,把页面信息封装在response对象中
         response = HtmlResponse(url=self.driver.current_url, body=source, request=request, encoding="utf-8")
