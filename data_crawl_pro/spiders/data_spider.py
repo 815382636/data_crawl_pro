@@ -11,7 +11,7 @@ from data_crawl_pro.items import DataCrawlProItem
 
 def test_exist(list, data):
     for i in list:
-        if data == i["model"]:
+        if data == i.get("model"):
             return True
     return False
 
@@ -19,7 +19,7 @@ def test_exist(list, data):
 class DataSpiderSpider(CrawlSpider):
     name = 'data_spider'
     # allowed_domains = ['vega.github.io']
-    start_urls = ['https://vega.github.io/vega-lite/examples/bar.html']
+    start_urls = ['https://vega.github.io/']
     rules = (
         Rule(LinkExtractor(
             allow=[r'https://vega.github.io/.*', r'https://bl.ocks.org/.*', r'https://makingdatavisual.github.io/.*']),
@@ -80,7 +80,7 @@ class DataSpiderSpider(CrawlSpider):
         # 获取model中的数据(缺多数据情况)
         if item.get("model_list"):
             for i in item["model_list"]:
-                if "data" in i["model"].keys():
+                if i.get("model") and "data" in i["model"].keys():
                     if "url" in i["model"]["data"].keys():
                         data_url = i["model"]["data"]["url"]
                         data_res = ''
@@ -106,4 +106,6 @@ class DataSpiderSpider(CrawlSpider):
                             di = {}
                             di[data_url] = new_data
                             i["data"] = di
+        self.urls = []
+
         yield item

@@ -10,5 +10,4 @@ def connection():
     session = DBSession()
     metadata = MetaData(engine)
     tables = metadata.tables
-    print(tables)
     return session, engine

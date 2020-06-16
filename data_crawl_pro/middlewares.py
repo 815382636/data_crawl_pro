@@ -64,15 +64,19 @@ class DataCrawlProDownloaderMiddleware(object):
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
     # 下载地址：http://chromedriver.storage.googleapis.com/index.html
+    #服务器版本：83.0.4103.106-1
     def __init__(self):
-        server = Server("./browsermob-proxy-2.1.4/bin/browsermob-proxy")
+        server = Server("./browsermob-proxy-2.1.4/bin/browsermob-proxy",options={'port':8091})
         server.start()
         self.proxy = server.create_proxy()
 
         # 加载测试浏览器
         chrome_options = Options()
+        chrome_options.add_argument('--headless')
         chrome_options.add_argument('--ignore-certificate-errors')
         chrome_options.add_argument('--proxy-server={0}'.format(self.proxy.proxy))
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument('--disable-gpu')
         chrome_driver = r'./chromedriver'
         self.driver = webdriver.Chrome(executable_path=chrome_driver, chrome_options=chrome_options)
