@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import csv
+
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
@@ -30,7 +32,7 @@ class DataSpiderSpider(CrawlSpider):
 
     def parse_item(self, response):
 
-        # 获取model  1.通过network获取 2.通过网页内容获取
+        # 获取model  1.通过network获取 2.通过网页内容获取 3.通过点击获取（缺地球情况）
         item = DataCrawlProItem()
         # 通过网页内容获取
         result = response.selector.xpath('//*')
@@ -75,19 +77,33 @@ class DataSpiderSpider(CrawlSpider):
                 else:
                     item["model_list"] = [data_model]
 
-        # 获取model中的数据
+        # 获取model中的数据(缺多数据情况)
         if item.get("model_list"):
             for i in item["model_list"]:
                 if "data" in i["model"].keys():
                     if "url" in i["model"]["data"].keys():
                         data_url = i["model"]["data"]["url"]
+                        data_res = ''
                         if "https://" in data_url:
                             data_res = requests.get(data_url).text
-                            i["data"] = data_res
                         else:
                             for url in self.urls:
                                 if data_url in url:
+                                    data_url = url
                                     data_res = requests.get(url).text
-                                    i["data"] = data_res
-
+                        if 'json' in data_url:
+                            new_data = json.loads(data_res)
+                            di = {}
+                            di[data_url] = new_data
+                            i["data"] = di
+                        elif 'csv' in data_url:
+                            new_data = list(csv.reader(data_res.split('\n'), delimiter=','))
+                            di = {}
+                            di[data_url] = new_data
+                            i["data"] = di
+                        else:
+                            new_data = data_res
+                            di = {}
+                            di[data_url] = new_data
+                            i["data"] = di
         yield item
