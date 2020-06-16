@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69a0e332-6809-4b3b-bfef-ff5052fac912" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_crawl_pro/dbConnection/pg_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/dbConnection/pg_connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_crawl_pro/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/middlewares.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_crawl_pro/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/properties.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,10 +43,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="2" />
+          <entry key="csv" value="3" />
           <entry key="gitignore" value="1" />
+          <entry key="log" value="1" />
           <entry key="md" value="5" />
-          <entry key="py" value="49" />
+          <entry key="py" value="53" />
           <entry key="sql" value="1" />
           <entry key="txt" value="1" />
           <entry key="yaml" value="1" />
@@ -61,8 +56,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="49" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="Python" value="53" />
           <entry key="Scratch" value="1" />
           <entry key="YAML" value="1" />
         </counts>
@@ -70,7 +65,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="286" />
-          <entry key="py" value="2017" />
+          <entry key="py" value="2077" />
           <entry key="txt" value="16" />
         </counts>
       </usages-collector>
@@ -78,27 +73,27 @@
         <counts>
           <entry key="Markdown" value="286" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="2017" />
+          <entry key="Python" value="2077" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="15" />
+            <state relative-caret-position="150">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2450">
-              <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+            <state relative-caret-position="399">
+              <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
               <folding>
                 <element signature="e#24#34#0" expanded="true" />
               </folding>
@@ -107,31 +102,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_crawl_pro/middlewares.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="120" column="35" lean-forward="true" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="35" />
+              <folding>
+                <element signature="e#168#179#0" expanded="true" />
+                <marker date="1592298004341" expanded="true" signature="3417:3418" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_crawl_pro/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_crawl_pro/pipelines.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <marker date="1592312599889" expanded="true" signature="246:447" ph="..." />
-              </folding>
+            <state relative-caret-position="188">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -168,11 +155,11 @@
         <option value="$PROJECT_DIR$/data_crawl_pro/items.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/properties.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/middlewares.py" />
-        <option value="$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/dbConnection/pg_connection.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/pipelines.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py" />
       </list>
     </option>
   </component>
@@ -480,34 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="116" column="32" lean-forward="true" selection-end-line="132" />
-          <folding>
-            <element signature="e#168#179#0" expanded="true" />
-            <marker date="1592298004341" expanded="true" signature="3417:3418" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/properties.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <marker date="1592312599889" expanded="true" signature="246:447" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_crawl_pro/set_up.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -517,8 +476,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_crawl_pro/flights-airport.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
+        <state relative-caret-position="247">
           <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/properties.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <marker date="1592312599889" expanded="true" signature="246:447" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/bmp.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -529,34 +515,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2450">
-          <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_crawl_pro/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="188">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="120" column="35" lean-forward="true" selection-start-line="120" selection-start-column="35" selection-end-line="120" selection-end-column="35" />
+          <folding>
+            <element signature="e#168#179#0" expanded="true" />
+            <marker date="1592298004341" expanded="true" signature="3417:3418" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="15" />
+        <state relative-caret-position="150">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -32,6 +32,10 @@ class DataSpiderSpider(CrawlSpider):
 
     def parse_item(self, response):
 
+        with open("./through_urls.txt","a") as file:
+            file.write(response.url+"\n")
+            file.close()
+
         # 获取model  1.通过network获取 2.通过网页内容获取 3.通过点击获取（缺地球情况）
         item = DataCrawlProItem()
         # 通过网页内容获取
