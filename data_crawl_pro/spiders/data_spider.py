@@ -9,17 +9,12 @@ import requests
 from data_crawl_pro.items import DataCrawlProItem
 
 
-def test_exist(list, data):
-    for i in list:
-        if data == i.get("model"):
-            return True
-    return False
 
 
 class DataSpiderSpider(CrawlSpider):
     name = 'data_spider'
     # allowed_domains = ['vega.github.io']
-    start_urls = ['https://vega.github.io/']
+    start_urls = ['https://makingdatavisual.github.io/examples/5_1_scatter']
     rules = (
         Rule(LinkExtractor(
             allow=[r'https://vega.github.io/.*', r'https://bl.ocks.org/.*', r'https://makingdatavisual.github.io/.*']),
@@ -31,10 +26,14 @@ class DataSpiderSpider(CrawlSpider):
         self.urls = []
 
     def parse_item(self, response):
-
-        with open("./through_urls.txt","a") as file:
-            file.write(response.url+"\n")
+        # 将爬取的网页写入txt
+        with open("./through_urls.txt", "a") as file:
+            file.write(response.url + "\n")
             file.close()
+
+        # 拿到proxy中的network的url
+        network_url = self.urls
+        self.urls = []
 
         # 获取model  1.通过network获取 2.通过网页内容获取 3.通过点击获取（缺地球情况）
         item = DataCrawlProItem()
@@ -52,64 +51,49 @@ class DataSpiderSpider(CrawlSpider):
                 if code_list:
                     str = ''.join(code_list)
                     json_data = json.loads(str)
-                    data_model = {}
-                    data_model["model"] = json_data
-                    data_model["url"] = response.url
-                    # 获取图片
-                    data_model["picture"] = response.selector.xpath(
+                    item["model"] = json_data
+                    item["url"] = response.url
+                    item["picture"] = response.selector.xpath(
                         "//*[name()='svg' and @class ='marks']").extract_first()
 
-                    # 将data_model加入item
-                    if item.get("model_list"):
-                        if not test_exist(item.get("model_list"), json_data):
-                            item["model_list"].append(data_model)
-                    else:
-                        item["model_list"] = [data_model]
-
         # 通过network获取
-        for url in self.urls:
-            if "vl.json" in url:
-                res = requests.get(url)
-                data_model = {}
-                data_model["model"] = json.loads(res.text)
-                data_model["url"] = response.url
-                # 获取图片
-                data_model["picture"] = response.selector.xpath("//*[name()='svg' and @class ='marks']").extract_first()
-                if item.get("model_list"):
-                    if not test_exist(item["model_list"], data_model["model"]):
-                        item["model_list"].append(item)
-                else:
-                    item["model_list"] = [data_model]
+        if not item:
+            for url in network_url:
+                if "vl.json" in url:
+                    res = requests.get(url)
+                    item["model"] = json.loads(res.text)
+                    item["url"] = response.url
+                    item["picture"] = response.selector.xpath(
+                        "//*[name()='svg' and @class ='marks']").extract_first()
 
         # 获取model中的数据(缺多数据情况)
-        if item.get("model_list"):
-            for i in item["model_list"]:
-                if i.get("model") and "data" in i["model"].keys():
-                    if "url" in i["model"]["data"].keys():
-                        data_url = i["model"]["data"]["url"]
-                        data_res = ''
-                        if "https://" in data_url:
-                            data_res = requests.get(data_url).text
-                        else:
-                            for url in self.urls:
-                                if data_url in url:
-                                    data_url = url
-                                    data_res = requests.get(url).text
-                        if 'json' in data_url:
-                            new_data = json.loads(data_res)
-                            di = {}
-                            di[data_url] = new_data
-                            i["data"] = di
-                        elif 'csv' in data_url:
-                            new_data = list(csv.reader(data_res.split('\n'), delimiter=','))
-                            di = {}
-                            di[data_url] = new_data
-                            i["data"] = di
-                        else:
-                            new_data = data_res
-                            di = {}
-                            di[data_url] = new_data
-                            i["data"] = di
-        self.urls = []
+        if item:
+            if item.get("model") and "data" in item["model"].keys():
+                if "url" in item["model"]["data"].keys():
+                    data_url = item["model"]["data"]["url"]
+                    data_res = ''
+                    if "https://" in data_url:
+                        data_res = requests.get(data_url).text
+                    else:
+                        for url in network_url:
+                            if data_url in url:
+                                data_url = url
+                                data_res = requests.get(url).text
+                    if 'json' in data_url:
+                        new_data = json.loads(data_res)
+                        di = {}
+                        di[data_url] = new_data
+                        item["data"] = di
+                    elif 'csv' in data_url:
+                        new_data = list(csv.reader(data_res.split('\n'), delimiter=','))
+                        di = {}
+                        di[data_url] = new_data
+                        item["data"] = di
+                    else:
+                        new_data = data_res
+                        di = {}
+                        di[data_url] = new_data
+                        item["data"] = di
+
 
         yield item

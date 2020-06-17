@@ -12,4 +12,4 @@ import scrapy
 class DataCrawlProItem(scrapy.Item):
     # define the fields for your item here like:
     # url = data = name = picture = scrapy.Field()
-    model_list = scrapy.Field()
+    id = url = model = data = picture = scrapy.Field()
