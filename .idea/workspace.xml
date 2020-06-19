@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69a0e332-6809-4b3b-bfef-ff5052fac912" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data_crawl_pro/error_urls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_crawl_pro/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_crawl_pro/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/data_crawl_pro$set_up.coverage" NAME="set_up Coverage Results" MODIFIED="1592400702387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_crawl_pro" />
+    <SUITE FILE_PATH="coverage/data_crawl_pro$set_up.coverage" NAME="set_up Coverage Results" MODIFIED="1592534789690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_crawl_pro" />
     <SUITE FILE_PATH="coverage/data_crawl_pro$tractor.coverage" NAME="tractor Coverage Results" MODIFIED="1591498804180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_crawl_pro/te" />
     <SUITE FILE_PATH="coverage/data_crawl_pro$db_test.coverage" NAME="db_test Coverage Results" MODIFIED="1591282798364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_crawl_pro/dbConnection" />
     <SUITE FILE_PATH="coverage/data_crawl_pro$pytest_in_test_LinkExtractor_py.coverage" NAME="pytest in test_LinkExtractor.py Coverage Results" MODIFIED="1591498747851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_crawl_pro/test" />
@@ -44,13 +49,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cfg" value="1" />
-          <entry key="csv" value="3" />
+          <entry key="csv" value="4" />
           <entry key="gitignore" value="1" />
           <entry key="log" value="3" />
           <entry key="md" value="5" />
-          <entry key="py" value="67" />
+          <entry key="py" value="68" />
           <entry key="sql" value="1" />
-          <entry key="txt" value="14" />
+          <entry key="txt" value="20" />
           <entry key="yaml" value="1" />
         </counts>
       </usages-collector>
@@ -58,8 +63,8 @@
         <counts>
           <entry key="Ini" value="1" />
           <entry key="Markdown" value="5" />
-          <entry key="PLAIN_TEXT" value="21" />
-          <entry key="Python" value="67" />
+          <entry key="PLAIN_TEXT" value="28" />
+          <entry key="Python" value="68" />
           <entry key="Scratch" value="1" />
           <entry key="YAML" value="1" />
         </counts>
@@ -67,7 +72,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="286" />
-          <entry key="py" value="2178" />
+          <entry key="py" value="2405" />
           <entry key="txt" value="16" />
         </counts>
       </usages-collector>
@@ -75,7 +80,7 @@
         <counts>
           <entry key="Markdown" value="286" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Python" value="2178" />
+          <entry key="Python" value="2405" />
         </counts>
       </usages-collector>
     </session>
@@ -85,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="14" column="26" lean-forward="true" selection-end-line="17" />
+            <state relative-caret-position="250">
+              <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -94,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_crawl_pro/middlewares.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+            <state relative-caret-position="563">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
               <folding>
                 <element signature="e#168#179#0" expanded="true" />
               </folding>
@@ -106,11 +111,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_crawl_pro/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="44" lean-forward="true" selection-end-line="28" />
+            <state relative-caret-position="287">
+              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
               <folding>
                 <element signature="e#25#56#0" expanded="true" />
-                <marker date="1592399036853" expanded="true" signature="246:447" ph="..." />
+                <marker date="1592534275969" expanded="true" signature="273:474" ph="..." />
               </folding>
             </state>
           </provider>
@@ -119,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_crawl_pro/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="435">
+              <caret line="85" column="26" lean-forward="true" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -128,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/pg_connection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="8" column="8" lean-forward="true" selection-end-line="13" />
+            <state relative-caret-position="175">
+              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -137,8 +142,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            <state relative-caret-position="360">
+              <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
               <folding>
                 <element signature="e#24#34#0" expanded="true" />
               </folding>
@@ -178,13 +183,14 @@
         <option value="$PROJECT_DIR$/data_crawl_pro/test/test_LinkExtractor.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/properties.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/dbConnection/pg_connection.py" />
-        <option value="$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/data_crawl_pro/set_up.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/items.py" />
-        <option value="$PROJECT_DIR$/data_crawl_pro/pipelines.py" />
-        <option value="$PROJECT_DIR$/data_crawl_pro/through_urls.txt" />
         <option value="$PROJECT_DIR$/data_crawl_pro/middlewares.py" />
+        <option value="$PROJECT_DIR$/data_crawl_pro/get_data_from_server.py" />
+        <option value="$PROJECT_DIR$/data_crawl_pro/through_urls.txt" />
+        <option value="$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py" />
+        <option value="$PROJECT_DIR$/data_crawl_pro/pipelines.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/settings.py" />
         <option value="$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py" />
       </list>
@@ -484,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/flights-airport.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrapy.cfg">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -517,27 +516,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/through_urls.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_crawl_pro/set_up.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="14" column="26" lean-forward="true" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/pg_connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="8" column="8" lean-forward="true" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -551,38 +533,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/flights-airport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/get_data_from_server.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/through_urls.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/dbConnection/pg_connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_crawl_pro/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="44" lean-forward="true" selection-end-line="28" />
+        <state relative-caret-position="287">
+          <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
           <folding>
             <element signature="e#25#56#0" expanded="true" />
-            <marker date="1592399036853" expanded="true" signature="246:447" ph="..." />
+            <marker date="1592534275969" expanded="true" signature="273:474" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_crawl_pro/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="435">
+          <caret line="85" column="26" lean-forward="true" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_crawl_pro/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        <state relative-caret-position="563">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding>
             <element signature="e#168#179#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data_crawl_pro/error_urls.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_crawl_pro/spiders/data_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="360">
+          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
           <folding>
             <element signature="e#24#34#0" expanded="true" />
           </folding>

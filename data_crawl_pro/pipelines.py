@@ -4,6 +4,8 @@ from sqlalchemy import MetaData
 
 from data_crawl_pro.dbConnection.pg_connection import connection
 from data_crawl_pro.dbConnection.model import JsonData, Base
+import hashlib
+import json
 
 
 class DataCrawlProPipeline(object):
@@ -17,12 +19,14 @@ class DataCrawlProPipeline(object):
 
     def process_item(self, item, spider):
         if item:
+            model_to_hash = item.get("model")
+            model_to_hash = json.dumps(model_to_hash).encode()
+            model_to_hash = hashlib.md5(model_to_hash)
             jsonData = JsonData(url=item.get("url"), data=item.get("data"), model=item.get("model"),
-                                picture=item.get("picture"))
+                                picture=item.get("picture"), hashmodel=model_to_hash.hexdigest())
             try:
                 self.session.add(jsonData)
                 self.session.commit()
             except:
                 self.session.rollback()
         return item
-

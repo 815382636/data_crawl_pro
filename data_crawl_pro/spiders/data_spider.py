@@ -9,8 +9,6 @@ import requests
 from data_crawl_pro.items import DataCrawlProItem
 
 
-
-
 class DataSpiderSpider(CrawlSpider):
     name = 'data_spider'
     # allowed_domains = ['vega.github.io']
@@ -95,5 +93,11 @@ class DataSpiderSpider(CrawlSpider):
                         di[data_url] = new_data
                         item["data"] = di
 
+        # 爬取代码不合适
+        vega_actions = response.selector.xpath("//*[@class ='vega-actions']")
+        if vega_actions and not item:
+            with open('./error_urls.txt', 'a') as file:
+                file.write(response.url + "\n")
+                file.close()
 
         yield item
