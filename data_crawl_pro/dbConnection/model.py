@@ -11,7 +11,7 @@ class JsonData(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     url = Column(String(200),nullable=False)
     model = Column(JSON, nullable=False)
-    hashmodel =Column(String(200),primary_key=True,nullable=False)
+    hashmodel =Column(String(200),unique=True,nullable=False)
     data = Column(JSON)
     picture = Column(Text)
     registerTime = Column(DateTime(timezone=True), default=datetime.now)
