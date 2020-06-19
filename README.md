@@ -1,18 +1,23 @@
 # 数据爬虫项目
-主要实现了针对vega.github.io的子网页的可视化数据与图片抓取
+主要实现了针对vega类型的可视化图表模型、数据与图片的抓取
 
-##环境安装
+##快速开始
 
-1.python环境安装
+1.新建虚拟环境、安装环境
+-   cd data_crawl_pro
+-   virtualenv venv
+-   source ./bin/activate
+-   cd ..
+-   pip install -r requirement.txt
+      
+2.修改本地数据库信息
+-   将properties.py中的url等信息修改为自己本地的信息
 
-   anaconda3 python安装 https://www.jianshu.com/p/49994ab80080
-   （anaconda3中对scrapy框架有比较好的支持，安装时不会报错）
+3.chromedriver的配置
+-   下载地址：http://chromedriver.storage.googleapis.com/index.html
+-   从中找到与本地谷歌浏览器版本相同的driver版本，并根据window、mac、linux进行选择
 
-2.框架、包的安装
-  
-    以anaconda3 python为父环境配置虚拟环境
-      pip install scrapy
-      pip install sqlalchemy
-      pip install psycopg2
-      pip install selenium
+4.环境已配好，开始运行
+-   python set_up.py
+
 
