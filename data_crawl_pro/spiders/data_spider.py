@@ -15,7 +15,7 @@ class DataSpiderSpider(CrawlSpider):
     start_urls = ['https://vega.github.io/']
     rules = (
         Rule(LinkExtractor(
-            allow=[r'https://vega.github.io/.*', r'https://bl.ocks.org/.*', r'https://makingdatavisual.github.io/.*']),
+            allow=[r'https://vega.github.io/.*', r'https://bl.ocks.org/.*', r'https://makingdatavisual.github.io/.*',r'https://www.trafforddatalab.io/.*',r'https://observablehq.com/.*']),
             callback='parse_item', follow=True),
     )
 
