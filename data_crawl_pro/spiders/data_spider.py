@@ -12,10 +12,10 @@ from data_crawl_pro.items import DataCrawlProItem
 class DataSpiderSpider(CrawlSpider):
     name = 'data_spider'
     # allowed_domains = ['vega.github.io']
-    start_urls = ['https://vega.github.io/']
+    start_urls = ['https://bl.ocks.org/domoritz/f5abc519dd990bfcbc3f20f634658364']
     rules = (
         Rule(LinkExtractor(
-            allow=[r'https://vega.github.io/.*', r'https://bl.ocks.org/.*', r'https://makingdatavisual.github.io/.*',r'https://www.trafforddatalab.io/.*',r'https://observablehq.com/.*']),
+            allow=[r'https://vega.github.io/.*', r'https://bl.ocks.org/.*', r'https://makingdatavisual.github.io/.*',r'https://www.trafforddatalab.io/.*']),
             callback='parse_item', follow=True),
     )
 

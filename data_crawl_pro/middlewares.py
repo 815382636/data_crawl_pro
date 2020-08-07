@@ -42,7 +42,7 @@ class DataCrawlProDownloaderMiddleware(object):
         # 模拟人类行为
         self.proxy.new_har(request.url)
         self.driver.get(request.url)
-        time.sleep(30)
+        time.sleep(10)
         result = self.proxy.har
         for entry in result['log']['entries']:
             _url = entry['request']['url']

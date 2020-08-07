@@ -15,7 +15,7 @@ class DataCrawlProPipeline(object):
         self.session, engine = connection()
         metadata = MetaData(engine)
         tables = metadata.tables
-        if "jsondata" not in tables:
+        if "jsontext" not in tables:
             Base.metadata.create_all(engine)
 
     def process_item(self, item, spider):

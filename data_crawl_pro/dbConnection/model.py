@@ -6,7 +6,7 @@ Base = declarative_base()
 
 
 class JsonData(Base):
-    __tablename__ = 'jsondata'
+    __tablename__ = 'jsontext'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     url = Column(String(200),nullable=False)
