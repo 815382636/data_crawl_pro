@@ -31,7 +31,7 @@
 -   pip install -r requirement.txt
       
 2.修改本地数据库信息
--   将properties.py中的url等信息修改为自己本地的信息
+-   将properties.py中的urlt等信息修改为自己本地的信息
 
 3.chromedriver的配置
 -   下载地址：http://chromedriver.storage.googleapis.com/index.html

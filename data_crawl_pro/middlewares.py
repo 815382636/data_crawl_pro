@@ -40,16 +40,21 @@ class DataCrawlProDownloaderMiddleware(object):
     # 返回response：则跳过资源下载直接交给解析方法
     def process_response(self, request, response, spider):
         # 模拟人类行为
-        self.proxy.new_har(request.url)
-        self.driver.get(request.url)
-        time.sleep(10)
-        result = self.proxy.har
-        for entry in result['log']['entries']:
-            _url = entry['request']['url']
-            if _url not in spider.urls:
-                spider.urls.append(_url)
-        source = self.driver.page_source
-        # 创建一个response对象,把页面信息封装在response对象中
-        response = HtmlResponse(url=self.driver.current_url, body=source, request=request, encoding="utf-8")
-        return response
+        try:
+            self.proxy.new_har(request.url)
+            self.driver.get(request.url)
+            time.sleep(10)
+            result = self.proxy.har
+            for entry in result['log']['entries']:
+                _url = entry['request']['url']
+                if _url not in spider.urls:
+                    spider.urls.append(_url)
+            source = self.driver.page_source
+            # 创建一个response对象,把页面信息封装在response对象中
+            response = HtmlResponse(url=self.driver.current_url, body=source, request=request, encoding="utf-8")
+            return response
+        except:
+            with open('./error_urls.txt', 'a') as file:
+                file.write(request.url + "\n")
+                file.close()
 

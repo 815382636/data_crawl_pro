@@ -1,4 +1,0 @@
-https://vega.github.io/vega-lite/demo.html
-https://vega.github.io/vega-lite/docs/condition.html
-https://vega.github.io/vega-lite/docs/text.html
-https://vega.github.io/vega-lite/docs/rect.html
